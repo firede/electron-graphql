@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/firede/electron-graphql#readme",
   "devDependencies": {
+    "@types/graphql": "^0.11.8",
     "@types/jest": "^22.0.1",
     "@types/node": "^9.3.0",
     "electron": "^1.8.1",
