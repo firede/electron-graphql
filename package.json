@@ -4,8 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/firede/electron-graphql.git"
@@ -20,5 +19,23 @@
   "bugs": {
     "url": "https://github.com/firede/electron-graphql/issues"
   },
-  "homepage": "https://github.com/firede/electron-graphql#readme"
+  "homepage": "https://github.com/firede/electron-graphql#readme",
+  "devDependencies": {
+    "@types/jest": "^22.0.1",
+    "@types/node": "^9.3.0",
+    "electron": "^1.8.1",
+    "graphql": "^0.12.3",
+    "husky": "^0.14.3",
+    "jest": "^22.1.1",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2",
+    "spectron": "^3.7.2",
+    "ts-jest": "^22.0.1",
+    "typescript": "^2.6.2"
+  },
+  "peerDependencies": {
+    "electron": "^1.7.0 || ^1.8.0",
+    "graphql": "^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0"
+  }
 }
