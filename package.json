@@ -4,7 +4,15 @@
   "description": "",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "prepublish": "npm run dist",
+    "precommit": "lint-staged",
+    "prepush": "npm test",
+    "dist:clean": "rimraf dist",
+    "dist:build": "tsc",
+    "dist": "npm run dist:clean && npm run dist:build",
+    "test": "jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/firede/electron-graphql.git"
@@ -37,5 +45,25 @@
   "peerDependencies": {
     "electron": "^1.7.0 || ^1.8.0",
     "graphql": "^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
