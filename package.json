@@ -1,0 +1,24 @@
+{
+  "name": "electron-graphql",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firede/electron-graphql.git"
+  },
+  "keywords": [
+    "graphql",
+    "electron",
+    "fetch"
+  ],
+  "author": "Firede <firede@firede.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/firede/electron-graphql/issues"
+  },
+  "homepage": "https://github.com/firede/electron-graphql#readme"
+}
