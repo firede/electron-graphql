@@ -13,20 +13,20 @@ npm i electron-graphql
 ### main progress
 
 ```js
-// `provider` only works in main progress
-const { createGraphQLProvider } = require("electron-graphql")
+// `executor` only works in main progress
+const { createGraphQLExecutor } = require("electron-graphql")
 
-// create GraphQL provider
-const gqlProvider = createGraphQLProvider({
+// create GraphQL executor
+const gqlExecutor = createGraphQLExecutor({
   // electron IPC channel (base name)
   channel,
   schema,
-  root,
-  context
+  rootValue,
+  contextValue
 })
 
-// dispose GraphQL provider
-gqlProvider.dispose()
+// dispose GraphQL executor
+gqlExecutor.dispose()
 ```
 
 ### renderer process

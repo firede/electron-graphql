@@ -18,9 +18,9 @@ export interface FetchOptions {
   channel?: string
 }
 
-// Provider types
+// Executor types
 
-export interface ProviderOptions {
+export interface ExecutorOptions {
   channel?: string
   schema: GraphQLSchema
   rootValue?: any
