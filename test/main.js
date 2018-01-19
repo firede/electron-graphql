@@ -13,6 +13,8 @@ let gqlExecutor = createGraphQLExecutor({
   rootValue: rootValue
 })
 
+gqlExecutor.init()
+
 app.on("ready", () => {
   mainWindow = new BrowserWindow()
 
