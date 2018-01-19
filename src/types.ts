@@ -20,9 +20,12 @@ export interface FetchOptions {
 
 // Executor types
 
-export interface ExecutorOptions {
-  channel?: string
+export interface ExecutorProps {
   schema: GraphQLSchema
   rootValue?: any
   contextValue?: any
+}
+
+export interface ExecutorOptions extends ExecutorProps {
+  channel?: string
 }
