@@ -2,7 +2,7 @@ import { EventEmitter } from "events"
 import { ExecutorOptions } from "./types"
 import { ipcMain, Event } from "electron"
 
-export function createGraphQLProvider(options: ExecutorOptions): GraphQLExecutor {
+export function createGraphQLExecutor(options: ExecutorOptions): GraphQLExecutor {
   return new GraphQLExecutor(options)
 }
 
