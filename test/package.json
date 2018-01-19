@@ -1,6 +1,6 @@
 {
   "name": "electron-graphql-test",
   "version": "0.1.0",
-  "main": "main.fixture.js",
+  "main": "main.js",
   "private": true
 }

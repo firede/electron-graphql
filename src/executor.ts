@@ -23,6 +23,7 @@ export class GraphQLExecutor extends EventEmitter {
   }
 
   private req(evt: Event, ...args: any[]) {
+    console.log(evt, args)
     // validate & execute
   }
 

@@ -1,3 +1,3 @@
 export function createGraphQLFetch() {}
 
-class ElectronGraphQLFetch {}
+export class ElectronGraphQLFetch {}
