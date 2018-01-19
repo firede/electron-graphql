@@ -10,7 +10,7 @@
     "prepush": "npm test",
     "clean": "rimraf dist",
     "build": "tsc",
-    "preview": "electron test",
+    "preview": "NODE_ENV=development electron test",
     "dist": "npm-run-all clean build",
     "dev": "npm-run-all dist preview",
     "test": "NODE_ENV=test jest"
