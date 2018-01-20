@@ -1,13 +1,12 @@
-import { EventEmitter } from "events"
-import { ExecutorProps, ExecutorOptions, GraphQLRequest } from "./types"
 import { ipcMain, Event } from "electron"
 import { execute as graphqlExecute, graphql, ExecutionResult } from "graphql"
+import { ExecutorProps, ExecutorOptions, GraphQLRequest } from "./types"
 
 export function createGraphQLExecutor(options: ExecutorOptions): GraphQLExecutor {
   return new GraphQLExecutor(options)
 }
 
-export class GraphQLExecutor extends EventEmitter {
+export class GraphQLExecutor {
   private channel: string
   private props: ExecutorProps
 
@@ -20,8 +19,6 @@ export class GraphQLExecutor extends EventEmitter {
   }
 
   constructor({ channel = "electron-graphql", schema, rootValue, contextValue }: ExecutorOptions) {
-    super()
-
     this.channel = channel
     this.props = {
       schema,
