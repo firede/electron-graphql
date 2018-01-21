@@ -13,7 +13,8 @@
     "preview": "NODE_ENV=development electron test",
     "dist": "npm-run-all clean build",
     "dev": "npm-run-all dist preview",
-    "test": "NODE_ENV=test jest"
+    "jest": "NODE_ENV=test jest",
+    "test": "npm-run-all dist jest"
   },
   "repository": {
     "type": "git",
