@@ -1,7 +1,7 @@
 {
   "name": "electron-graphql",
   "version": "0.1.0",
-  "description": "",
+  "description": "Lightweight GraphQL server & client for Electron apps.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -23,7 +23,8 @@
   "keywords": [
     "graphql",
     "electron",
-    "fetch"
+    "ipc",
+    "graphql-electron"
   ],
   "author": "Firede <firede@firede.us>",
   "license": "MIT",
