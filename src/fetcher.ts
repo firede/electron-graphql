@@ -44,6 +44,7 @@ export class GraphQLFetcher {
 
   public dispose() {
     ipcRenderer.removeAllListeners(this.resChannel)
+    this.callbackMap.clear()
   }
 
   public fetch(params: GraphQLRequest) {
