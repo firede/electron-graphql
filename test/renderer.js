@@ -1,7 +1,9 @@
-const ipc = require("electron").ipcRenderer
+const { GraphQLFetcher } = require("../dist")
 
-function resHandler(evt, result) {
-  console.log(result)
-}
+const fetcher = new GraphQLFetcher()
 
-ipc.on("electron-graphql-res", resHandler)
+fetcher.init()
+
+fetcher.fetch({ query: `{ hello }` })
+  .then(result => console.log(result))
+  .catch(err => console.error(err))
