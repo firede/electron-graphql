@@ -1,6 +1,6 @@
 import { GraphQLSchema, DocumentNode } from "graphql"
 
-// Fetch types
+// Fetcher types
 
 export interface GraphQLRequest {
   query?: string | DocumentNode

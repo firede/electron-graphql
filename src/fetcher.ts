@@ -2,6 +2,10 @@ import { ipcRenderer, Event } from "electron"
 import { FetcherOptions, FetchResult, GraphQLRequest } from "./types"
 import * as uuid from "uuid/v4"
 
+export function createGraphQLFetcher(options: FetcherOptions): GraphQLFetcher {
+  return new GraphQLFetcher(options)
+}
+
 export class GraphQLFetcher {
   private props: FetcherOptions
 
