@@ -27,10 +27,10 @@ export class GraphQLExecutor {
     }
   }
 
-  private req(evt: Event, obj: GraphQLRequest) {
-    this.execute(obj)
+  private req(evt: Event, callbackId: string, params: GraphQLRequest) {
+    this.execute(params)
       .then(result => {
-        evt.sender.send(this.resChannel, result)
+        evt.sender.send(this.resChannel, callbackId, result)
       })
       .catch(err => {
         // TODO: add error logs (if needed)

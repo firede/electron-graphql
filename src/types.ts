@@ -14,8 +14,9 @@ export interface FetchResult {
   extensions?: any
 }
 
-export interface FetchOptions {
+export interface FetcherOptions {
   channel?: string
+  timeout?: number
 }
 
 // Executor types
