@@ -1,5 +1,7 @@
 # electron-graphql
 
+Lightweight GraphQL server & client for Electron apps.
+
 This project is **WORK IN PROGRESS**, do **NOT** try to use it :trollface:
 
 # Installation
@@ -25,6 +27,9 @@ const gqlExecutor = createGraphQLExecutor({
   contextValue
 })
 
+// init GraphQL executor
+gqlExecutor.init()
+
 // dispose GraphQL executor
 gqlExecutor.dispose()
 ```
@@ -32,14 +37,17 @@ gqlExecutor.dispose()
 ### renderer process
 
 ```js
-// `fetch` only works in renderer process
-import { createGraphQLFetch } from "electron-graphql"
+// `fetcher` only works in renderer process
+import { createGraphQLFetcher } from "electron-graphql"
 
-// create GraphQL fetch
-const gqlFetch = createGraphQLFetch({ channel })
+// create GraphQL fetcher
+const gqlFetcher = createGraphQLFetcher({ channel, timeout })
+
+// init GraphQL fetcher
+gqlFetcher.init()
 
 // use GraphQL fetch
-gqlFetch({ query, variables, operationName })
+gqlFetcher.fetch({ query, variables, operationName })
   .then(result => {
     const { data, errors, extensions } = result
     // GraphQL errors and extensions are optional
@@ -47,6 +55,9 @@ gqlFetch({ query, variables, operationName })
   .catch(error => {
     //respond to a connect error
   })
+
+// dispose GraphQL fetcher
+gqlFetcher.dispose()
 ```
 
 ## API

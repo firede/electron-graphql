@@ -63,7 +63,12 @@ export class GraphQLFetcher {
           // delete expired callback
           this.callbackMap.delete(callbackId)
 
-          reject(`query timeout! callback id: ${callbackId}`)
+          // TODO: define error interface and throw it
+          reject({
+            type: "timeout",
+            message: "electron-graphql fetch request timeout.",
+            payload: params,
+          })
         }
       }, this.props.timeout)
 
