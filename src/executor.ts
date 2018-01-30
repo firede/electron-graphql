@@ -6,6 +6,10 @@ export function createGraphQLExecutor(options: ExecutorOptions): GraphQLExecutor
   return new GraphQLExecutor(options)
 }
 
+function isPromise(value: any): boolean {
+  return typeof value === "object" && value !== null && typeof value.then === "function"
+}
+
 export class GraphQLExecutor {
   private channel: string
   private props: ExecutorProps
@@ -50,12 +54,15 @@ export class GraphQLExecutor {
       })
     } else {
       // otherwise `execute` it directly
-      return graphqlExecute({
+      // graphql 0.12.x update: `execute` returns MaybePromise<ExecutionResult>
+      const result = graphqlExecute({
         ...this.props,
         document: query,
         variableValues,
         operationName,
       })
+
+      return isPromise(result) ? result : Promise.resolve(result)
     }
   }
 
