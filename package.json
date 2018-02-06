@@ -33,27 +33,26 @@
   },
   "homepage": "https://github.com/firede/electron-graphql#readme",
   "devDependencies": {
-    "@types/graphql": "^0.12.1",
-    "@types/jest": "^22.0.1",
-    "@types/node": "^9.3.0",
+    "@types/graphql": "^0.12.3",
+    "@types/jest": "^22.1.1",
+    "@types/node": "^9.4.0",
     "@types/uuid": "^3.4.3",
     "devtron": "^1.4.0",
-    "electron": "^1.7.11",
+    "electron": "^1.8.1",
     "graphql": "^0.12.3",
-    "graphql-tag": "^2.6.1",
+    "graphql-tag": "^2.7.0",
     "husky": "^0.14.3",
     "jest": "^22.1.4",
-    "lint-staged": "^6.0.1",
+    "lint-staged": "^6.1.0",
     "npm-run-all": "^4.1.2",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
-    "spectron": "^3.7.2",
-    "ts-jest": "^22.0.1",
-    "typescript": "^2.6.2"
+    "spectron": "^3.8.0",
+    "ts-jest": "^22.0.3",
+    "typescript": "^2.7.1"
   },
   "peerDependencies": {
-    "electron": "^1.7.0 || ^1.8.0",
-    "graphql": "^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0"
+    "graphql": "^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0"
   },
   "jest": {
     "transform": {
