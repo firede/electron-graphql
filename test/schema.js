@@ -2,12 +2,12 @@ const { buildSchema } = require("graphql")
 
 exports.schema = buildSchema(`
 type Query {
-  hello: String
+  hello(name: String): String
 }
 `)
 
 exports.rootValue = {
-  hello() {
-    return "world"
-  }
+  hello({ name = "world" }) {
+    return name
+  },
 }

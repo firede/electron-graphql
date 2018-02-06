@@ -5,18 +5,23 @@ const fetcher = new GraphQLFetcher()
 
 fetcher.init()
 
-fetcher
-  .fetch({ query: `{ hello }` })
-  .then(result => console.log("string query:", result))
-  .catch(err => console.error(err))
+const queryElement = document.getElementById("query")
+const resultElement = document.getElementById("result")
+const sendElement = document.getElementById("send")
+const refElement = document.getElementById("ref")
 
-const queryDocument = gql`
-  query GraphQLTagQuery {
-    hello
-  }
-`
+function sendQuery() {
+  const ref = refElement.value
+  // if ref start with `gql:`, using gql.
+  const query = ref.indexOf("gql:") === 0 ? gql(queryElement.value) : queryElement.value
 
-fetcher
-  .fetch({ query: queryDocument })
-  .then(result => console.log("query document:", result))
-  .catch(err => console.error(err))
+  fetcher
+    .fetch({ query: query })
+    .then(result => {
+      resultElement.value = JSON.stringify(result)
+      resultElement.setAttribute("data-ref", ref)
+    })
+    .catch(err => console.error(err))
+}
+
+sendElement.addEventListener("click", sendQuery.bind(this), false)
